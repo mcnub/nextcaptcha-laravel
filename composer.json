@@ -1,0 +1,65 @@
+{
+    "name": "mcnub/nextcaptcha-laravel",
+    "description": "NextCaptcha integration for Laravel",
+    "type": "library",
+    "version": "1.0.0",
+    "keywords": [
+        "nextcaptcha",
+        "laravel",
+        "captcha",
+        "recaptcha",
+        "hcaptcha",
+        "anti-bot"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mcnub",
+            "email": "info@mcnub.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "illuminate/support": "^9.0|^10.0",
+        "illuminate/contracts": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0",
+        "mockery/mockery": "^1.5",
+        "phpstan/phpstan": "^1.10",
+        "laravel/pint": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "NextCaptcha\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NextCaptcha\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NextCaptcha\\NextCaptchaServiceProvider"
+            ],
+            "aliases": {
+                "NextCaptcha": "NextCaptcha\\Facades\\NextCaptcha"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "pint": "pint --config pint-strict-imports.json",
+        "analyse": "vendor/bin/phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
